@@ -1,6 +1,8 @@
 var https = require('https');
 
-function getAndPrintHTMLChunks () {
+function getAndPrintHTMLChunks (option) {
+
+  var option = {};
 
   var requestOptions = {
     host: 'sytantris.github.io',
@@ -9,7 +11,7 @@ function getAndPrintHTMLChunks () {
 
   var str = '';
 
-https.get(requestOptions, function (response) {
+  https.get(requestOptions, function (response) {
 
   // set encoding of received data to UTF-8
   response.setEncoding('utf8');
